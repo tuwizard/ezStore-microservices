@@ -12,18 +12,18 @@
 - DDD
 
 ## IDE
-- Visual studio code
+- Visual Studio Code
 
 ## Docker
 - First run the database, message queue: `docker-compose -f docker-compose-init.yml up`
 - Then run the app as development by command:
-  + dotnet publish .\ezStoreMicroservice.sln
-  + docker-compose -f docker-compose.yml up --build
+  + `dotnet publish ezStoreMicroservice.sln`
+  + `docker-compose -f docker-compose.yml up --build`
 
 ## Debugging
 - Open file docker-compose.debug.yml
 - If you want to debug a container, un-comment block of service
-- Run command: docker-compose -f docker-compose.debug.yml --build
+- Run command: `docker-compose -f docker-compose.debug.yml up --build`
 - Run F5 with configuration in launch.json
 
 ## Microservices
