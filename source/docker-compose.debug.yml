@@ -16,7 +16,6 @@ services:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     volumes:
       - ./03.ezStore/Product/ezStore.Microservice.Product.API/bin/Debug/netcoreapp2.1/publish:/app
     entrypoint: tail -f /dev/null
@@ -33,7 +32,6 @@ services:
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
   #   ports:
   #     - "80"
-  #   network_mode: source_microservice-bridge-network
   #   volumes:
   #     - ./02.Core Services/Member/Microservice.IdentityServer/bin/Debug/netcoreapp2.1/publish:/app
   #   entrypoint: tail -f /dev/null
@@ -50,7 +48,6 @@ services:
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
   #   ports:
   #     - "80"
-  #   network_mode: source_microservice-bridge-network
   #   volumes:
   #     - ./02.Core Services/Logging/Microservice.Logging.API/bin/Debug/netcoreapp2.1/publish:/app
   #   entrypoint: tail -f /dev/null
@@ -67,7 +64,6 @@ services:
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
   #   ports:
   #     - "80"
-  #   network_mode: source_microservice-bridge-network
   #   volumes:
   #     - ./02.Core Services/Logging/Microservice.Logging.BackgroundProcess/bin/Debug/netcoreapp2.1/publish:/app
   #   entrypoint: tail -f /dev/null
@@ -84,7 +80,6 @@ services:
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
   #   ports:
   #     - "80"
-  #   network_mode: source_microservice-bridge-network
   #   dns:
   #     - 8.8.8.8
   #   volumes:

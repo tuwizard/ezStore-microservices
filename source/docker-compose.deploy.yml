@@ -12,7 +12,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     command: /bin/bash -c "dotnet ezStore.Microservice.Product.API.dll"
 
   microservice.identityserver:
@@ -26,7 +25,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     command: /bin/bash -c "dotnet Microservice.IdentityServer.dll"
 
   microservice.logging.api:
@@ -40,7 +38,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     command: /bin/bash -c "dotnet Microservice.Logging.API.dll"
 
   microservice.logging.backgroundprocess:
@@ -54,7 +51,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     command: /bin/bash -c "dotnet Microservice.Logging.BackgroundProcess.dll"
 
   microservice.notification.backgroundprocess:
@@ -68,7 +64,6 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-    network_mode: source_microservice-bridge-network
     dns:
       - 8.8.8.8
     command: /bin/bash -c "dotnet Microservice.Notification.BackgroundProcess.dll"
