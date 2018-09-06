@@ -2,68 +2,64 @@ version: '3.4'
 
 services:
   ezstore.microservice.product.api:
-    image: ezstore/product-api:dev
-    container_name: ezstore.product.api
+    image: ezstore.product.api:0.03092018
+    container_name: ezstore-product-api
     build:
       target: deploy
       context: 03.ezStore/Product/ezStore.Microservice.Product.API
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - 6005:80
     command: /bin/bash -c "dotnet ezStore.Microservice.Product.API.dll"
 
   microservice.identityserver:
-    image: microservice/identity-server:dev
-    container_name: microservice.identityserver
+    image: microservice.identity.server:0.03092018
+    container_name: microservic-identity-server
     build:
       target: deploy
       context: 02.Core Services/Member/Microservice.IdentityServer
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - 5001:80
     command: /bin/bash -c "dotnet Microservice.IdentityServer.dll"
 
   microservice.logging.api:
-    image: microservice/logging-api:dev
-    container_name: microservice.logging.api
+    image: microservice.logging.api:0.03092018
+    container_name: microservice-logging-api
     build:
       target: deploy
       context: 02.Core Services/Logging/Microservice.Logging.API
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - 5002:80
     command: /bin/bash -c "dotnet Microservice.Logging.API.dll"
 
   microservice.logging.backgroundprocess:
-    image: microservice/logging-background:dev
-    container_name: microservice.logging.background
+    image: microservice.logging.background:0.03092018
+    container_name: microservice-logging-background
     build:
       target: deploy
       context: 02.Core Services/Logging/Microservice.Logging.BackgroundProcess
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
     command: /bin/bash -c "dotnet Microservice.Logging.BackgroundProcess.dll"
 
   microservice.notification.backgroundprocess:
-    image: microservice/notification-background:dev
-    container_name: microservice.notification.background
+    image: microservice.notification.background:0.03092018
+    container_name: microservice-notification-background
     build:
       target: deploy
       context: 02.Core Services/Notification/Microservice.Notification.BackgroundProcess
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
     dns:
       - 8.8.8.8
     command: /bin/bash -c "dotnet Microservice.Notification.BackgroundProcess.dll"

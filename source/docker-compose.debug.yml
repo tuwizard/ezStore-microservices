@@ -1,16 +1,16 @@
 version: '3.4'
 # If you want to debug a container, un-comment block of service
-# Run command: docker-compose -f docker-compose.debug.yml --build
+# Run command: docker-compose -f docker-compose.debug.yml up --build
 # Run F5 with configuration in launch.json
 
 services:
   ezstore.microservice.product.api:
-    image: ezstore/product-api:dev
-    container_name: ezstore.product.api
+    image: ezstore.product.api:dev
+    container_name: ezstore-product-api
     build:
       target: base
       context: 03.ezStore/Product/ezStore.Microservice.Product.API
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.debug
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - DOTNET_USE_POLLING_FILE_WATCHER=1
@@ -21,12 +21,12 @@ services:
     entrypoint: tail -f /dev/null
 
   # microservice.identityserver:
-  #   image: microservice/identity-server:dev
-  #   container_name: microservice.identityserver
+  #   image: microservice.identity.server:dev
+  #   container_name: microservice-identity-server
   #   build:
-  #     target: base
+  #     target: debug
   #     context: 02.Core Services/Member/Microservice.IdentityServer
-  #     dockerfile: Dockerfile
+  #     dockerfile: Dockerfile.debug
   #   environment:
   #     - ASPNETCORE_ENVIRONMENT=Development
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
@@ -37,12 +37,12 @@ services:
   #   entrypoint: tail -f /dev/null
 
   # microservice.logging.api:
-  #   image: microservice/logging-api:dev
-  #   container_name: microservice.logging.api
+  #   image: microservice.logging.api:dev
+  #   container_name: microservice-logging-api
   #   build:
-  #     target: base
+  #     target: debug
   #     context: 02.Core Services/Logging/Microservice.Logging.API
-  #     dockerfile: Dockerfile
+  #     dockerfile: Dockerfile.debug
   #   environment:
   #     - ASPNETCORE_ENVIRONMENT=Development
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
@@ -53,12 +53,12 @@ services:
   #   entrypoint: tail -f /dev/null
 
   # microservice.logging.backgroundprocess:
-  #   image: microservice/logging-background:dev
-  #   container_name: microservice.logging.background
+  #   image: microservice.logging.background:dev
+  #   container_name: microservice-logging-background
   #   build:
-  #     target: base
+  #     target: debug
   #     context: 02.Core Services/Logging/Microservice.Logging.BackgroundProcess
-  #     dockerfile: Dockerfile
+  #     dockerfile: Dockerfile.debug
   #   environment:
   #     - ASPNETCORE_ENVIRONMENT=Development
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1
@@ -69,12 +69,12 @@ services:
   #   entrypoint: tail -f /dev/null
 
   # microservice.notification.backgroundprocess:
-  #   image: microservice/notification-background:dev
-  #   container_name: microservice.notification.background
+  #   image: microservice.notification.background:dev
+  #   container_name: microservice-notification-background
   #   build:
-  #     target: base
+  #     target: debug
   #     context: 02.Core Services/Notification/Microservice.Notification.BackgroundProcess
-  #     dockerfile: Dockerfile
+  #     dockerfile: Dockerfile.debug
   #   environment:
   #     - ASPNETCORE_ENVIRONMENT=Development
   #     - DOTNET_USE_POLLING_FILE_WATCHER=1

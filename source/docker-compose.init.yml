@@ -1,0 +1,39 @@
+version: '3.4'
+    
+services:
+  identity.db:
+    image: microservice.identity.db
+    container_name: microservice-identity-db
+    build:
+      context: .
+      dockerfile: Dockerfile.identity.db
+    ports:
+      - 3306:3306
+    entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+
+  services.queue:
+    image: microservice.services.queue
+    container_name: microservice-services-queue
+    build:
+      context: .
+      dockerfile: Dockerfile.services.queue
+    ports:
+      - 15672:15672
+
+  services.db:
+    image: microservice.services.db
+    container_name: microservice-services-db
+    build:
+      context: .
+      dockerfile: Dockerfile.services.db
+    ports:
+      - 27017:27017    
+
+  services.redis:
+    image: microservice.services.redis
+    container_name: microservice-services-redis
+    build:
+      context: .
+      dockerfile: Dockerfile.services.redis
+    ports:
+      - 6379:6379

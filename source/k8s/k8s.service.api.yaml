@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-identity-server
+spec:
+  type: LoadBalancer
+  ports:
+  - name: identity-server
+    protocol: TCP
+    port: 80
+    targetPort: 25001
+  selector:
+    app: microservice-identity-server
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: microservice-identity-server
+spec:
+  replicas: 2
+  minReadySeconds: 10
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: rvice-identity-server
+    spec:
+      containers:
+      - name: microservice-identity-server
+        image: khainx127/microservice.identity.server:0.03092018
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            cpu: 100m
+            memory: 30Mi
+          limits:
+            memory: 128Mi
+            cpu: 500m

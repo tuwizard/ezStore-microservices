@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.ezStore", "03.ezStore", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterData", "MasterData", "{072F6B48-1A82-4B16-900E-E86B11EC7DEA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Documents", "00. Documents", "{27CF47C0-D490-4F3D-AA76-AC8DB3D48DC7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Documents", "00.Documents", "{27CF47C0-D490-4F3D-AA76-AC8DB3D48DC7}"
 	ProjectSection(SolutionItems) = preProject
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
@@ -66,6 +66,20 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservice.Core.MessageQueue", "01.Libraries\Microservice.Core.MessageQueue\Microservice.Core.MessageQueue.csproj", "{106AB569-9D13-425F-B1E2-A62B9AC34026}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservice.SharedEvents", "02.Core Services\Microservice.SharedEvents\Microservice.SharedEvents.csproj", "{76B325BB-EFF4-485A-A062-DBC1E0549931}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "heroku-deploy", "heroku-deploy", "{9CC383E6-C307-4003-AE6D-9376CC747F7C}"
+	ProjectSection(SolutionItems) = preProject
+		heroku-deploy\deploy.bat = heroku-deploy\deploy.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-compose", "{50E4C689-92E6-444A-B553-B40592F522A3}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose-init.yml = docker-compose-init.yml
+		docker-compose.debug.yml = docker-compose.debug.yml
+		docker-compose.deploy.yml = docker-compose.deploy.yml
+		docker-compose.yml = docker-compose.yml
+		Dockerfile-RabbitMQ = Dockerfile-RabbitMQ
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
