@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   ezstore.microservice.product.api:
-    image: ezstore.product.api:0.03092018
+    image: ezstore.product.api
     container_name: ezstore-product-api
     build:
       target: deploy
@@ -15,11 +15,11 @@ services:
     command: /bin/bash -c "dotnet ezStore.Microservice.Product.API.dll"
 
   microservice.identityserver:
-    image: microservice.identity.server:0.03092018
+    image: microservice.identity.server
     container_name: microservic-identity-server
     build:
       target: deploy
-      context: 02.Core Services/Member/Microservice.IdentityServer
+      context: 02.CoreServices/Member/Microservice.IdentityServer
       dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -28,11 +28,11 @@ services:
     command: /bin/bash -c "dotnet Microservice.IdentityServer.dll"
 
   microservice.logging.api:
-    image: microservice.logging.api:0.03092018
+    image: microservice.logging.api
     container_name: microservice-logging-api
     build:
       target: deploy
-      context: 02.Core Services/Logging/Microservice.Logging.API
+      context: 02.CoreServices/Logging/Microservice.Logging.API
       dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -41,22 +41,22 @@ services:
     command: /bin/bash -c "dotnet Microservice.Logging.API.dll"
 
   microservice.logging.backgroundprocess:
-    image: microservice.logging.background:0.03092018
+    image: microservice.logging.background
     container_name: microservice-logging-background
     build:
       target: deploy
-      context: 02.Core Services/Logging/Microservice.Logging.BackgroundProcess
+      context: 02.CoreServices/Logging/Microservice.Logging.BackgroundProcess
       dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     command: /bin/bash -c "dotnet Microservice.Logging.BackgroundProcess.dll"
 
   microservice.notification.backgroundprocess:
-    image: microservice.notification.background:0.03092018
+    image: microservice.notification.background
     container_name: microservice-notification-background
     build:
       target: deploy
-      context: 02.Core Services/Notification/Microservice.Notification.BackgroundProcess
+      context: 02.CoreServices/Notification/Microservice.Notification.BackgroundProcess
       dockerfile: Dockerfile.deploy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

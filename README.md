@@ -21,12 +21,6 @@
   + `docker-compose -f docker-compose.init.yml up -d --build`
   + `docker-compose -f docker-compose.deploy.yml up -d --build`
 
-## Debugging
-- Open file docker-compose.debug.yml
-- If you want to debug a container, un-comment block of service
-- Run command: `docker-compose -f docker-compose.debug.yml up --build`
-- Run F5 with configuration in launch.json
-
 ## Microservices
 - Logging Service
 - Notification Service

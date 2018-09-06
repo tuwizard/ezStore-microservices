@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: microservice-identity-server
-        image: khainx127/microservice.identity.server:0.03092018
+        image: khainx127/microservice.identity.server
         ports:
           - containerPort: 80
         resources:

@@ -14,17 +14,17 @@ docker push khainx127/microservice.identity.db
 docker tag microservice.services.db khainx127/microservice.services.db
 docker push khainx127/microservice.services.db
 
-docker tag microservice.notification.background:0.03092018 khainx127/microservice.notification.background:0.03092018
-docker push khainx127/microservice.notification.background:0.03092018
+docker tag microservice.notification.background khainx127/microservice.notification.background
+docker push khainx127/microservice.notification.background
 
-docker tag ezstore.product.api:0.03092018 khainx127/ezstore.product.api:0.03092018
-docker push khainx127/ezstore.product.api:0.03092018
+docker tag ezstore.product.api khainx127/ezstore.product.api
+docker push khainx127/ezstore.product.api
 
-docker tag microservice.logging.background:0.03092018 khainx127/microservice.logging.background:0.03092018
-docker push khainx127/microservice.logging.background:0.03092018
+docker tag microservice.logging.background khainx127/microservice.logging.background
+docker push khainx127/microservice.logging.background
 
-docker tag microservice.identity.server:0.03092018 khainx127/microservice.identity.server:0.03092018
-docker push khainx127/microservice.identity.server:0.03092018
+docker tag microservice.identity.server khainx127/microservice.identity.server
+docker push khainx127/microservice.identity.server
 
-docker tag microservice.logging.api:0.03092018 khainx127/microservice.logging.api:0.03092018
-docker push khainx127/microservice.logging.api:0.03092018
+docker tag microservice.logging.api khainx127/microservice.logging.api
+docker push khainx127/microservice.logging.api
