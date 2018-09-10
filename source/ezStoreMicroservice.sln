@@ -69,18 +69,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservice.SharedEvents",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{9CC383E6-C307-4003-AE6D-9376CC747F7C}"
 	ProjectSection(SolutionItems) = preProject
-		k8s\build-images.bat = k8s\build-images.bat
-		k8s\deploy-kubenetes.bat = k8s\deploy-kubenetes.bat
+		k8s\build-api.bat = k8s\build-api.bat
+		k8s\build-db.bat = k8s\build-db.bat
+		k8s\deploy-api.bat = k8s\deploy-api.bat
+		k8s\deploy-db.bat = k8s\deploy-db.bat
 		k8s\k8s.service.api.yaml = k8s\k8s.service.api.yaml
 		k8s\k8s.service.db.yaml = k8s\k8s.service.db.yaml
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9D62E8B8-5B03-44FF-BF78-5FB60AAFE514}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "command-line", "command-line", "{DDB029F8-5295-40E0-9CB4-45145E73C494}"
-	ProjectSection(SolutionItems) = preProject
-		run-application.bat = run-application.bat
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

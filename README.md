@@ -8,21 +8,28 @@
 - mysql (5.7)
 - mongo (4.1.1)
 - rabbitmq (3.7)
-- Docker-ce
+- Docker-ce (version 18.06.1-ce, build e68fc7a)
+- Kubenetes (1.10.3)
 - DDD
 
 ## IDE
+- Visual Studio Community 15.8.1
 - Visual Studio Code
 
-## Docker
-- First run the database, message queue: `docker-compose -f docker-compose-init.yml up`
-- Then run the app as development by command:
-  + `dotnet publish ezStoreMicroservice.sln`
-  + `docker-compose -f docker-compose.init.yml up -d --build`
-  + `docker-compose -f docker-compose.deploy.yml up -d --build`
+## Development
+- First run `k8s\build-db.bat`, this will build images for databases and queues then push to Docker repository
+- Deploy databases and queues to Kubenetes by running `k8s\deploy-db.bat`
+- Get Cluster-IP from Kubenetes by running `kubectl get service`. Example:
+![](db-services.png)
+- Modify Cluster IP addresses in all appsettings.Development.json files
+- Run application from Visual Studio.
+
+## Deployment (inprogress)
+- First run `k8s\build-api.bat`, this will build images for databases and queues then push to Docker repository
+- Deploy to Kubenetes by running `k8s\deploy-api.bat`
 
 ## Microservices
+- Identity Server
 - Logging Service
 - Notification Service
-- Identity Server
 - Product Store

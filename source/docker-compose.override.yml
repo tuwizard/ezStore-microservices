@@ -1,25 +1,11 @@
 version: '3.4'
 
 services:
-  ezstore.microservice.product.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
   microservice.identityserver:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-
-
-  microservice.notification.backgroundprocess:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
 
   microservice.logging.api:
     environment:
@@ -27,10 +13,20 @@ services:
     ports:
       - "80"
 
-
   microservice.logging.backgroundprocess:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
 
+  microservice.notification.backgroundprocess:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  ezstore.microservice.product.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
