@@ -1,4 +1,9 @@
-version: '3.4'
+version: '3.5'
+
+networks:
+  microservice-network:
+    name: microservice-network
+    driver: bridge
     
 services:
   identity.db:
@@ -10,6 +15,8 @@ services:
     ports:
       - 3306:3306
     entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+    networks:
+      - microservice-network
 
   services.queue:
     image: microservice.services.queue
@@ -19,6 +26,8 @@ services:
       dockerfile: Dockerfile.services.queue
     ports:
       - 15672:15672
+    networks:
+      - microservice-network
 
   services.db:
     image: microservice.services.db
@@ -28,6 +37,8 @@ services:
       dockerfile: Dockerfile.services.db
     ports:
       - 27017:27017    
+    networks:
+      - microservice-network
 
   services.redis:
     image: microservice.services.redis
@@ -37,3 +48,5 @@ services:
       dockerfile: Dockerfile.services.redis
     ports:
       - 6379:6379
+    networks:
+      - microservice-network
